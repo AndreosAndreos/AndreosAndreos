@@ -12,6 +12,10 @@ header {
     color: white;
     padding: 1rem 0;
     text-align: center;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
 }
 
 header h1 {
@@ -59,4 +63,20 @@ footer {
     background: #333;
     color: white;
     margin-top: 2rem;
+}
+
+
+#helloImage, #newImage {
+    width: 400px;
+    height: auto;
+    transition: opacity 1s ease-in-out;
+}
+
+#newImage {
+    opacity: 0;  
+    display: none;
+}
+
+#newImage.visible {
+    opacity: 1;
 }
