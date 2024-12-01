@@ -5,6 +5,8 @@ body{
     background-size: cover;
     font-family: "Jaro", sans-serif;
     text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
 header {
@@ -14,6 +16,7 @@ header {
     padding: 10px;
     margin: 10px;
     border-radius: 10px;
+    text-align: center;
 }
 header h1{
     font-size: 80px;
@@ -31,6 +34,7 @@ nav {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 nav ul {
+    flex-wrap: wrap;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -53,8 +57,10 @@ nav ul li a {
     background-image: url(vecteezy_retro-sci-fi-futuristic-background-1980s-and-1990s-style-3d_7795873.jpg);
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat; 
-    width: 1500px;
+    background-repeat: no-repeat;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1500px;
     height: 600px;
     display: flex;
     justify-content: center;
@@ -63,12 +69,16 @@ nav ul li a {
     margin: 10px auto;
 }
 
-#about, #resume, #projects {
+#about, #resume, #projects, #certificates {
     opacity: 0.7;
     width: 33%;
-    height: 200;
     background-color: rgb(255, 217, 0);
     border-radius: 10px;
+    min-height: 150px;
+    min-width: 200px;
+    padding: 15px;
+    max-width: 300px;
+    box-sizing: border-box;
 }
 
 footer{
@@ -114,4 +124,30 @@ a:active {
     left: 0;
     top: 0;
     z-index: 100;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 8vw;
+    }
+
+    #container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul li {
+        font-size: 4vw;
+    }
+
+    #about, #resume, #projects, #certificates {
+        max-width: 90%;
+        margin: 5px auto;
+    }
 }
