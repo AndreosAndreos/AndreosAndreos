@@ -1,61 +1,68 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andrzej Chwalenia - Github Page</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styl.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>Welcome! Feel free to browse and get in touch with me!</h1>
-        <p>I'm <strong>Andrzej Chwalenia</strong>. This is my personal GitHub page.</p>
+        <h1>Welcome to my page!</h1>
     </header>
 
     <nav>
+        <h2>Feel free to browse and get in touch with me!</h2>
         <ul>
             <li><a href="#about">About Me</a></li>
             <li><a href="#resume">Resume</a></li>
-            <li><a href="#contact">Contact</a></li>
             <li><a href="#projects">Projects</a></li>
         </ul>
     </nav>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I am a third-year Computer Science student from Nysa, Poland. I created this page to showcase my projects to interested individuals, as well as to have an online placeholder for my achievements.</p>
-    </section>
+    <div id="container">
+        <div id="about">
+            <h2>About Me</h2>
+            <p>I am a third-year Computer Science student from Nysa, Poland. I created this page to showcase my projects to interested individuals, as well as to have an online placeholder for my achievements.</p>
+            <p>My email address: <a href="mailto:andrzejchwalenia@gmail.com">andrzejchwalenia@gmail.com</a></p>
+        </div>
 
-    <section id="resume">
-        <h2>Resume</h2>
-        <p>Here is my resume in English as well as in Polish.</p>
-        <ul>
-            <li>English version<a href=""></a></li>
-            <li>Polish version<a href=""></a></li>
-        </ul>
-    </section>
+        <div id="resume">
+            <h2>Resume</h2>
+            <a href="cvEnglish.html">English version</a><br>
+            <a href="cvPolish.html">Polish version</a>
+        </div>
 
-    <section id="projects">
-        <h2>My Projects</h2>
-        <ul>
-            <li><strong>Project 1:</strong> <a href="#">Project Name</a> - A brief description of this project.</li>
-            <li><strong>Project 2:</strong> <a href="#">Another Project</a> - A brief description of this project.</li>
-            <li><strong>Project 3:</strong> <a href="#">Yet Another Project</a> - A brief description of this project.</li>
-        </ul>
-    </section>
-
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>If you want to get in touch, feel free to reach out via email!</p>
-        <ul>
-            <li>Email: <a href="mailto:andrzejchwalenia@gmail.com">andrzejchwalenia@gmail.com</a></li>
-        </ul>
-    </section>
+        <div id="projects">
+            <h2>Projects</h2>
+            <a href="">Project 1</a><br>
+            <a href="">Project 2</a><br>
+            <a href="">Project 3</a><br>
+        </div>
+    </div>
 
     <footer>
-        <p>&copy; 2024 Andrzej Chwalenia. All rights reserved.</p>
+        <h3>Created & maintained by Andrzej Chwalenia &copy; All rights reserved</h3>
     </footer>
 
-    <script src="scripts.js"></script>
+    <script src="jquery-3.7.1.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            
+            $('#about, #resume, #projects').hide();
+
+            $("nav a").click(function(e) {
+                e.preventDefault();
+
+                $('#about, #resume, #projects').hide();
+
+                var target = $(this).attr("href");
+                $(target).fadeIn();
+            });
+        });
+    </script>
 </body>
 </html>
